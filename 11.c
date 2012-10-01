@@ -14,10 +14,10 @@ int main()
 	}
 	while(x<0 && x>10);
 
-	for(i = 0; i <= 10; i++)
+	for(i = 1; i <= 10; i++)
 	{
 		sum = 0;
-		for(z = i*x; z<(i+1)*x; z++)
+		for(z = (i-1)*x; z<i*x; z++)
 		{
 			sum = sum + cos(z);
 		}
