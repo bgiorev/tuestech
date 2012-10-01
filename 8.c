@@ -4,7 +4,7 @@ int fib(int x);
 
 int main()
 {
-	int i, k, x, l = 2;
+	int i, k, x, l = 1;
 	int arr[10];
 	
 	do
