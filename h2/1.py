@@ -17,6 +17,7 @@ for row in reader:
     item = {}
     for (name, value) in items:
         item[name] = value.strip()
+        print name
         if name == "Брой решени задачи":
             if item[name].isdigit():
                 sum += int(str(item[name]))
