@@ -7,8 +7,8 @@ public class CommandLine {
 		if(args[args.length-1].equals("down")) {
 			Arrays.sort(args,Collections.reverseOrder());
 			for(String str:args) {
-				if(System.getProperty(str) != null){ System.out.println(
-					System.getProperty(str));
+				if(System.getProperty(str) != null){ 
+				System.out.println(System.getProperty(str));
 				}
 			}
 		} else {
