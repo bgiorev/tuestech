@@ -8,7 +8,7 @@ public class CommandLine {
 			Arrays.sort(args,Collections.reverseOrder());
 			for(String str:args) {
 				if(System.getProperty(str) != null){ 
-				System.out.println(System.getProperty(str));
+					System.out.println(System.getProperty(str));
 				}
 			}
 		} else {
