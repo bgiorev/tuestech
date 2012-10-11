@@ -1,5 +1,11 @@
-/*автоматична подредба на хората в самолет, започва от 1А до ред 27, има 2х3 места на всеки ред
-правилна имплементация на метода add*/
+/*
+	РўРµС…РЅРѕР»РѕРіРёС‡РЅРѕ СѓС‡РёР»РёС‰Рµ "Р•Р»РµРєС‚СЂРѕРЅРЅРё СЃРёСЃС‚РµРјРё"
+	www.elsys-bg.org
+	11Р‘ РєР»Р°СЃ
+	Р‘РѕР¶РёРґР°СЂ РёРІРѕРІ Р“СЊРѕСЂРµРІ
+	РќРѕРјРµСЂ 6
+	Р—Р°РґР°С‡Р° - Р”Р° СЃРµ СЃСЉСЃС‚Р°РІРё РїСЂРѕРіСЂР°РјР°, РєРѕСЏС‚Рѕ РїСЂР°РІРё Р°РІС‚РѕРјР°С‚РёС‡РЅР° РїРѕРґСЂРµРґР±Р° РЅР° РїСЉС‚РЅРёС†РёС‚Рµ РІ СЃР°РјРѕР»РµС‚, РєРѕР№С‚Рѕ РёРјР° 162 РјРµСЃС‚Р°, СЂР°Р·РґРµР»РµРЅРё РЅР° 6 РєРѕР»РѕРЅРё Рё 27 СЂРµРґР°.
+*/
 import java.util.Random;
 
 public class AirPlane {
@@ -34,9 +40,9 @@ public class AirPlane {
 						}
 						
 						if(rvalue == 2 && k<=4) {
-							if(seats[k+1][i] == 0) {
-								seats[k][i] = 1;
-								seats[k+1][i] = 1;
+							if(seats[k+1][i] == 0 && k%3 <=1) {
+								seats[k][i] = 2;
+								seats[k+1][i] = 2;
 								sum += rvalue;
 								sat = true;
 								break;
@@ -44,10 +50,10 @@ public class AirPlane {
 						}
 						
 						if(rvalue == 3 && k<=3) {
-							if(seats[k+1][i] == 0 && seats[k+2][i] == 0) {
-								seats[k][i] = 1;
-								seats[k+1][i] = 1;
-								seats[k+2][i] = 1;
+							if(seats[k+1][i] == 0 && seats[k+2][i] == 0 && k%3 == 0) {
+								seats[k][i] = 3;
+								seats[k+1][i] = 3;
+								seats[k+2][i] = 3;
 								sum += rvalue;
 								sat = true;
 								break;
@@ -60,6 +66,9 @@ public class AirPlane {
 				if(sat == true) {
 					break;
 				}
+			}
+			if(sat == false){
+				System.out.println("You must wait another plane");
 			}
 			
 	}
