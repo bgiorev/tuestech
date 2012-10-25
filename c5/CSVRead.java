@@ -6,7 +6,7 @@ public class CSVRead{
  public static void main(String[] arg) throws Exception {
 
   BufferedReader CSVFile = 
-        new BufferedReader(new FileReader("Example.csv"));
+        new BufferedReader(new FileReader("belt_result.csv"));
 
   String dataRow = CSVFile.readLine(); // Read first line.
   // The while checks to see if the data is null. If 
