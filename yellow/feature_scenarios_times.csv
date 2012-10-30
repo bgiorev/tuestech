@@ -1,0 +1,91 @@
+20.92,features/facebook_share.feature,Share the generated certificates
+16.27,features/instance_create_update.feature,Only signed in users can claim certificates
+15.07,features/facebook_share.feature,Only specifis amount of certificates can be shared on one request
+12.53,features/groups.feature,Using a default key when the groud does not have any key
+10.39,features/statistic.feature,Client can see how many times his certificates were visited
+10.33,features/statistic.feature,Show to all users the most popular certificates
+10.32,features/instance_create_update.feature,There is disapprove link in the email send to the owner when user claims certificate
+8.87,features/facebook_share.feature,Share the generated certificates with different from default message
+8.2,features/key_rewind_feature.feature,First time rewind
+8.17,features/instance_create_update.feature,Update field of an instance to a new value
+6.97,features/statistic.feature,When certificate is visited by nor logged in user the counter for visits is increasing
+6.9,features/promote.feature,Login to promote certificates right after they are generated
+6.82,features/drafts.feature,Show the number of drafts in the menu
+5.83,features/promote.feature,Promote to all owners after new owner is added
+5.62,features/instance_create_update.feature,When user claims certificate other owners confrm the new user
+5.53,features/unsubscribe_user_from_emails.feature,Each email has unique unsubscribe link
+5.52,features/drafts.feature,Saving generated certificates for not signed in users
+5.19,features/facebook_share.feature,Have permission to share the generated certificates
+5.04,features/promote.feature,Show Promote button when certificates are generated from templates
+5.0,features/promote.feature,Promote to all owners of the certificate
+4.95,features/version_create_update.feature,A client creates a version field with a new value equal to an existing field
+4.81,features/instance_create_update.feature,Certificates with many owners is created with template
+4.66,features/index_page.feature,User have to see the key of the instance that is not found
+4.29,features/signing_in.feature,Signing in via form
+4.14,features/sending_email.feature,Don't send email if the user has already confirmed his account
+4.01,features/objects_access.feature,Show the template with specific size on the index page
+3.9,features/index_page.feature,Unregistered users see a text field for entering key certificate
+3.89,features/groups.feature,Displaying public resources to not logged in users
+3.81,features/unsubscribe_user_from_emails.feature,A chance for subscribing again is given in the confirmation email
+3.67,features/version_create_update.feature,A client updates a version field with a value equal to an existing field
+3.41,features/sending_email.feature,Send email when the user hasn't recive confirmation email
+3.29,features/facebook_share.feature,Tell to the user that there is error with Facebook when it happens
+3.26,features/promote.feature,Show to the user which service which certificates has promoted
+3.21,features/message_for_emails_to_owners.feature,In the message there is share link that shares the certificate on the current user wall
+3.11,features/instance_create_update.feature,Show all certificates of a user
+2.96,features/promote.feature,Show all instances that are not promoted
+2.88,features/image_caching.feature,Recreate the file and the attachment
+2.87,features/instance_create_update.feature,Certificate has more than one owner
+2.7,features/send_emails_for_certificates.feature,Notify the issuer that an emails are send when he sends them after he postponed the sending
+2.27,features/facebook_login.feature,Login in Facebook as a usual user without registration on the site
+2.25,features/instance_create_update.feature,Show example csv file for template
+2.19,features/send_emails_for_certificates.feature,Send emails to owners of the selected certificates
+1.95,features/image_caching.feature,Recreate image for instance when template is updated
+1.91,features/unsubscribe_user_from_emails.feature,There is logged in user and other email is entered for unsubscription
+1.88,features/promote.feature,Show already promoted certificates
+1.87,features/sending_email.feature,Send email when the user wants to reset his password
+1.7,features/send_emails_for_certificates.feature,Send emails after genertion if the issuer wants to
+1.66,features/send_emails_for_certificates.feature,Notify the issuer that an emails are send when he sends them rigth after the generation of certificates
+1.6,features/unsubscribe_user_from_emails.feature,Require authentication and confirmation when the user wants to unsubcribe from receiving emails
+1.56,features/unsubscribe_user_from_emails.feature,Entering email of other user
+1.45,features/message_for_emails_to_owners.feature,Always put a link for unsubscription at the bottom of the email with not default content
+1.37,features/change_password.feature,User clicks on link send to his email to change his password because he has forgotten it
+1.35,features/facebook_login.feature,User doesn't give permission to the site to log in
+1.22,features/promote.feature,Promote only once the certificates
+1.13,features/image_caching.feature,Create the first attachment for template and store it.
+1.1,features/message_for_emails_to_owners.feature,Send email with content that is created by adding new message
+1.05,features/objects_access.feature,Show a jpg version of the version
+1.04,features/instance_create_update.feature,Choose encoding for the uploaded csv file
+0.98,features/image_caching.feature,Recreate the attachment element if there is no file in the image_caching dir
+0.94,features/objects_access.feature,Show a png version of the instance
+0.93,features/objects_access.feature,Show a jpg version of the instance
+0.92,features/objects_access.feature,Show a jpeg version of the instance
+0.91,features/objects_access.feature,Show a jpg version of the template
+0.9,features/promote.feature,Promote certificates right after they are generated
+0.89,features/sign_up.feature,User registers in the site
+0.87,features/objects_access.feature,Show a pdf version of the instance
+0.85,features/send_emails_for_certificates.feature,Postpone emails when the client has just generated certificates
+0.69,features/svg/create_svg.feature,Replace text keys in the document with the provided text values
+0.66,features/send_emails_for_certificates.feature,Show all certificates for which emails are not send
+0.66,features/sign_up.feature,Admin registers users without entering password for them
+0.64,features/index_page.feature,User wants to reach something that is not in the site
+0.62,features/send_emails_for_certificates.feature,Promoting certificates through email should be more than one step process
+0.61,features/promote.feature,Email option is deactived for users that are unsubscribed from receiving emails
+0.58,features/signing_out.feature,Signing out
+0.57,features/svg/create_svg_with_qr_code.feature,Embedding the content of the qr image in the svg
+0.57,features/sign_up.feature,User chooses his password when he confirms his account
+0.56,features/signing_in.feature,Signing in via confirmation
+0.5,features/svg/convert_svg_to_pdf_feature.feature,Export svg file to pdf
+0.47,features/svg/create_svg_with_key.feature,Create an svg representation of an instance including the key of the instance
+0.43,features/signing_in.feature,Signing in with wrong password
+0.4,features/svg/create_svg.feature,Fields in svg that have no corresponding values in the instance should be left blank
+0.32,features/signing_in.feature,Signing in with wrong email
+0.31,features/objects_access.feature,Show the version by its url
+0.3,features/objects_access.feature,Show the instance by its url
+0.22,features/svg/parse_svg_and_create_fields.feature,Create fields from svg when some of the fields occur more then once in which case no duplicates should occur
+0.21,features/svg/create_svg_with_inkscape_template.feature,receive certificates in svg format
+0.2,features/svg/create_svg_with_qr_code.feature,Create a google charts api link to the qr code and include it in the svg content preserving the size of the
+0.16,features/svg/create_svg_for_version.feature,Merge svg content with a version
+0.14,features/svg/parse_svg_and_create_fields.feature,Create fields from the svg template
+0.05,features/svg/parse_svg_and_create_fields.feature,Create a special QRField for an image with a title "#{qrcode}"
+0.01,features/svg/persist_svg_to_file.feature,Persist instance with svg representation to tmp directory
