@@ -1,3 +1,11 @@
+/*
+ * 	Технологично училище "Електронни системи"
+ * www.elsys-bg.org
+ * 11Б клас
+ * Божидар ивов Гьорев
+ * Номер 6
+ * Задача - да се направи програма, която да слага топчета в кутия
+ * */
 package com.wordpress.bgiorev.homework10.code;
 import java.util.ArrayList;
 
