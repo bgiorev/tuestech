@@ -140,44 +140,23 @@ public class AirPlane {
 		return females;
 	}
 	
-	public void setInfo(AirPlane plane) {
+	public void fillThePlane(AirPlane plane) {
 		int passangers;
-		int gends;
-		RandomString names = new RandomString();
-		String[] genders = {"Male", "Female"};
 		while(plane.freeSeats() != 0) {
 			passangers = (int)((Math.random() * 10)%3)+1;
 			for(int i = 0; i < passangers; i++) {
 				if(passangers == 1){
 					Human h = new Human();	
-					h.setName(names.random());
-					gends = (int)((Math.random() * 10)%2);
-					h.setGender(genders[gends]);
 					plane.add(passangers, h);
 				}else {
 					if(passangers == 2) {
 						Human h = new Human();
 						Human j = new Human();
-						h.setName(names.random());
-						gends = (int)((Math.random() * 10)%2);
-						h.setGender(genders[gends]);
-						j.setName(names.random());
-						gends = (int)((Math.random() * 10)%2);
-						j.setGender(genders[gends]);
 						plane.add(passangers, h, j);
 					}else{
 						Human h = new Human();
 						Human j = new Human();
 						Human l = new Human();
-						h.setName(names.random());
-						gends = (int)((Math.random() * 10)%2);
-						h.setGender(genders[gends]);
-						j.setName(names.random());
-						gends = (int)((Math.random() * 10)%2);
-						j.setGender(genders[gends]);
-						l.setName(names.random());
-						gends = (int)((Math.random() * 10)%2);
-						l.setGender(genders[gends]);
 						plane.add(passangers, h, j, l);
 					}
 				}
@@ -189,7 +168,7 @@ public class AirPlane {
 	
 	public static void main(String[] args) {
 		AirPlane plane = new AirPlane();
-		plane.setInfo(plane);
+		plane.fillThePlane(plane);
 		System.out.println("############################");
 		plane.printSeats();
 		System.out.println("Number of males - " + plane.numOfMales());
