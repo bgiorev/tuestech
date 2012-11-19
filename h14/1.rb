@@ -1,10 +1,17 @@
+﻿#	Технологично училище "Електронни системи"
+#	www.elsys-bg.org
+#	11Б клас
+#	Божидар ивов Гьорев
+#	Номер 6
+#	Задача - да се състави програма, която взима съдържанието на един сайт и изкарва всички линкове от него
+
 require 'nokogiri'
 require 'open-uri'
 require 'csv'
 
-def start()
+def start(a)
 CSV.open("link_result.csv","wb") do |csv|
-	page = Nokogiri::HTML(open('http://nokogiri.org/'))
+	page = Nokogiri::HTML(open(a))
 	links = page.search('a')
 	main_title = page.search("title")
 	i = 0
@@ -13,8 +20,8 @@ CSV.open("link_result.csv","wb") do |csv|
 			puts link['href']
 			csv <<[link['href']]
 		else
-			puts "http://nokogiri.org/#{link['href']}"
-			csv << ["http://nokogiri.org/#{link['href']}"]
+			puts "#{a + link['href']}"
+			csv << ["#{a + link['href']}"]
 		end
 		i+= 1
 	end	
@@ -23,5 +30,10 @@ CSV.open("link_result.csv","wb") do |csv|
 end
 end
 
-
-start()
+ARGV.each do |a|
+	if !a.end_with?('/')
+		a = a + '/'
+	end
+	puts a
+	start(a)
+end
