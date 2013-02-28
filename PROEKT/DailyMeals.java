@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class DailyMeals{
 	private ArrayList<Meal> mealList;
 	private double allCalories;
-	private int allCarbs;
-	private int allProtein;
-	private int allFat;
+	private double allCarbs;
+	private double allProtein;
+	private double allFat;
 	
 	public ArrayList<Meal> getMealList() {
 		return mealList;
@@ -21,7 +21,7 @@ public class DailyMeals{
 		this.allCalories = allCalories;
 	}
 
-	public int getAllCarbs() {
+	public double getAllCarbs() {
 		return allCarbs;
 	}
 
@@ -29,7 +29,7 @@ public class DailyMeals{
 		this.allCarbs = allCarbs;
 	}
 
-	public int getAllProtein() {
+	public double getAllProtein() {
 		return allProtein;
 	}
 
@@ -37,7 +37,7 @@ public class DailyMeals{
 		this.allProtein = allProtein;
 	}
 
-	public int getAllFat() {
+	public double getAllFat() {
 		return allFat;
 	}
 
@@ -75,6 +75,12 @@ public class DailyMeals{
 		allCarbs += m.getCarbs();
 		allProtein += m.getProtein();
 		allFat += m.getFat();
+	}
+	
+	public void calculateDaily() {
+		for(Meal m : mealList) {
+			calculate(m);
+		}
 	}
 	
 }

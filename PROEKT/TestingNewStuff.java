@@ -2,26 +2,29 @@ package com.wordpress.bgiorev.sqliteTry.code;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.ArrayList;
 import java.util.Date;
+
 
 public class TestingNewStuff {
 	public static void main(String[] args) throws ClassNotFoundException {
-		DateFormat dateFormat = new SimpleDateFormat ("dd/MM/yyyy HH:mm:ss");
-		Date date = new Date();
-		System.out.println(dateFormat.format(date));
-		
-		Calendar calendar = Calendar.getInstance();
-		System.out.println(dateFormat.format(calendar.getTime()));
-		
 		Diary diary = new Diary();
-		Meal m = diary.searchMeal("лайна", 10);
+		Meal m = diary.searchMeal("Агнешки-език суров", 300);
 		if(m == null) {
-			System.out.println("The meal wasn't found");
+			System.out.println("The meal wasnot found");
 		}
-		m = diary.searchMeal("shit", 100);
-		diary.saveTodaysMeals();
-		System.out.println("Finished");
-		diary.showTodaysSavedCalc();
+		
+		DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
+		Date todayDate = new Date();
+		String s = "Agneshko-vareno";
+	
+		String date = dateFormat.format(todayDate);
+		ArrayList<Meal> mealList = diary.findEatenMealsByDate(date);
+		if(mealList.size()>0) {
+			for(Meal meal : mealList) {
+				System.out.println(meal.getName());
+			}
+		}
+		
 	}
 }

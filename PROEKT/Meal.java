@@ -3,11 +3,11 @@ package com.wordpress.bgiorev.sqliteTry.code;
 public class Meal {
 	private String name;
 	private double calories;
-	private int carbs;
-	private int protein;
-	private int fat;
+	private double carbs;
+	private double protein;
+	private double fat;
 	
-	public Meal(String name, double calories, int carbs, int protein, int fat) {
+	public Meal(String name, double calories, double carbs, double protein, double fat) {
 		this.name = name;
 		this.calories = calories;
 		this.carbs = carbs;
@@ -21,13 +21,13 @@ public class Meal {
 	public double getCalories() {
 		return calories;
 	}
-	public int getCarbs() {
+	public double getCarbs() {
 		return carbs;
 	}
-	public int getProtein() {
+	public double getProtein() {
 		return protein;
 	}
-	public int getFat() {
+	public double getFat() {
 		return fat;
 	}
 }
