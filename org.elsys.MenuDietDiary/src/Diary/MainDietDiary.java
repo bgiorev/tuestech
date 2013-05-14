@@ -45,7 +45,8 @@ public class MainDietDiary {
 	protected Shell startDietDiary;
 	protected Shell loadDietdiary;
 	private Table table;
-
+	private ArrayList<Button> buttons = new ArrayList<Button>();
+	private ArrayList<Label> lab = new ArrayList<Label>(2000);
 	private Text text_1;
 	private ArrayList<String> names = new ArrayList<String>();
 	private Table table_1;
@@ -71,23 +72,46 @@ public class MainDietDiary {
 	public static void main(String[] args) {
 		try {
 			MainDietDiary window = new MainDietDiary();
-			window.open();
+			window.open(true, false, false);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public ArrayList<Label> getLables() {
+
+		return lab;
+	}
+
+	public ArrayList<Button> getButtons() {
+		return buttons;
+	}
+
+	public void setDatas(String height, String weight, String age, String name,
+			String gender, String perpose, String times) {
+		datas.clear();
+		datas.add(height);
+		datas.add(weight);
+		datas.add(age);
+		datas.add(name);
+		datas.add(gender);
+		datas.add(perpose);
+		datas.add(times);
+
 	}
 
 	/**
 	 * Open the window.
 	 */
 
-	public void open() {
+	public void open(boolean test,boolean test2,boolean test3) {
 		Display display = Display.getDefault();
 		// mapTheData();
 
-		createContents();
+		createContents(test,test2,test3);
 		shlDietdiary.open();
 		shlDietdiary.layout();
+		if(test==true)
 		while (!shlDietdiary.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
@@ -98,32 +122,27 @@ public class MainDietDiary {
 	public boolean firstTime() {
 		return true;
 	}
-	
-	boolean checkInput(String name, int height, int weight,	int age ,String gender,	int physicalActivity,String purpose){
-		if(name.matches("^[a-zA-Z]+$") &&
-			height<=250 &&
-				age<=100 &&
-				 weight<=150 &&
-					physicalActivity<=10)
+
+	boolean checkInput(String name, int height, int weight, int age,
+			String gender, int physicalActivity, String purpose) {
+		if (name.matches("^[a-zA-Z]+$") && height <= 250 && age <= 100
+				&& weight <= 150 && physicalActivity <= 10)
 			return true;
-			
-						
-		
+
 		return false;
 	}
 
-	protected void register(Shell parentShell) {
+	protected void register(Shell parentShell,boolean test) {
 		Display display = Display.getDefault();
-	
-		regDietDiary = new Shell(parentShell,SWT.TITLE | SWT.CLOSE | SWT.BORDER);// shell
+
+		regDietDiary = new Shell(parentShell, SWT.TITLE | SWT.CLOSE
+				| SWT.BORDER);// shell
 		regDietDiary.setSize(529, 317);
 		regDietDiary.setText("DietDiary");
 
 		TabFolder tabFolder = new TabFolder(regDietDiary, SWT.NONE);
 		tabFolder.setBounds(0, 0, 523, 575);
-		
-		
-		
+
 		TabItem tabItem = new TabItem(tabFolder, SWT.NONE);
 		tabItem.setText("Registration");
 
@@ -270,17 +289,17 @@ public class MainDietDiary {
 				if (!btnCheckButton.getSelection() && !button_1.getSelection()
 						&& !button_4.getSelection())
 					datas.add("0");
-				
+
 				datas.add(text_6.getText());
-				int height =0 ;
+				int height = 0;
 				int weight = 0;
-				int age =0;
+				int age = 0;
 				String gender = "";
-				String name ="";
+				String name = "";
 				int physicalActivity = 0;
 				String purpose = "";
-				if(datas.size()==7){
-					
+				if (datas.size() == 7) {
+
 					name = datas.get(3);
 					height = Integer.valueOf(datas.get(0));
 					weight = Integer.valueOf(datas.get(1));
@@ -289,32 +308,40 @@ public class MainDietDiary {
 					physicalActivity = Integer.valueOf(datas.get(6));
 					purpose = datas.get(5);
 				}
-				
-				
-				if(checkInput(name, height, weight,age ,gender,physicalActivity,purpose)){
-					BodyCalculator bc = new BodyCalculator(name,height,weight,age,gender,physicalActivity,purpose);
+
+				if (checkInput(name, height, weight, age, gender,
+						physicalActivity, purpose)) {
+					BodyCalculator bc = new BodyCalculator(name, height,
+							weight, age, gender, physicalActivity, purpose);
 					try {
 						diary.saveCalculator(bc);
 					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
-						System.out.println("At saving body calculaotr register()");
+						System.out
+								.println("At saving body calculaotr register()");
 					}
 					regDietDiary.dispose();
+				} else {
+					MessageBox registrationError = new MessageBox(regDietDiary,
+							SWT.ICON_WARNING);
+					registrationError.setMessage("Please fill correct data");
+					int rc = registrationError.open();
+					datas.removeAll(datas);
 				}
-				else{
-					MessageBox registrationError= new MessageBox(regDietDiary,SWT.ICON_WARNING);
-					 registrationError.setMessage("Please fill correct data");
-					 int rc = registrationError.open();
-					 datas.removeAll(datas);
-				}
-				
-				
 
 			}
 		});
-		
+		lab.add(label_5);
+		lab.add(label_6);
+		lab.add(label_7);
+		lab.add(label_8);
+		lab.add(label_12);
+		lab.add(label_9);
+		lab.add(label_10);
+		lab.add(label_11);
 		regDietDiary.open();
 		regDietDiary.layout();
+		if(test==true)
 		while (!regDietDiary.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
@@ -324,7 +351,7 @@ public class MainDietDiary {
 
 	}
 
-	protected void StartMenu() {
+	protected void StartMenu(final boolean test) {
 		Display display = Display.getDefault();
 		startDietDiary = new Shell(SWT.TITLE | SWT.CLOSE | SWT.BORDER);// shell
 		startDietDiary.setSize(117, 190);
@@ -332,8 +359,6 @@ public class MainDietDiary {
 
 		TabFolder tabFolder = new TabFolder(startDietDiary, SWT.NONE);
 		tabFolder.setBounds(0, 0, 126, 167);
-		
-		
 
 		TabItem tabItem = new TabItem(tabFolder, SWT.NONE);
 		tabItem.setText("Start");
@@ -352,60 +377,61 @@ public class MainDietDiary {
 		btnNewDiary.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				register(startDietDiary);
-				
+				register(startDietDiary,test);
+
 			}
 		});
 		btnLoadDiary.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				loaddata(startDietDiary);
-				
+
 			}
 		});
-		
-		startDietDiary.addListener(SWT.Close, new Listener(){
+
+		startDietDiary.addListener(SWT.Close, new Listener() {
 
 			@Override
 			public void handleEvent(Event event) {
-				MessageBox messageBox = new MessageBox(startDietDiary, SWT.APPLICATION_MODAL | SWT.YES | SWT.NO);
-		        messageBox.setText("Exit");
-		        messageBox.setMessage("Close the diary?");
-		       // event.doit = messageBox.open() == SWT.YES;
-		        int choice = messageBox.open();
-		        switch(choice){
-		        	case SWT.YES:
-		        		System.exit(0);
-		        		break;
-		        	
-		        	case SWT.NO:
-		        		
-		        		break;
-		        		
-		        }
-		        
-			}
-			
-		});
-		
+				MessageBox messageBox = new MessageBox(startDietDiary,
+						SWT.APPLICATION_MODAL | SWT.YES | SWT.NO);
+				messageBox.setText("Exit");
+				messageBox.setMessage("Close the diary?");
+				// event.doit = messageBox.open() == SWT.YES;
+				int choice = messageBox.open();
+				switch (choice) {
+				case SWT.YES:
+					System.exit(0);
+					break;
 
+				case SWT.NO:
+
+					break;
+
+				}
+
+			}
+
+		});
+		buttons.add(btnNewDiary);
+		buttons.add(btnLoadDiary);
 		startDietDiary.open();
 		startDietDiary.layout();
-		
+		if(test==true)
 		while (!startDietDiary.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
-			
+
 		}
-		
 
 	}
 
 	protected void loaddata(final Shell parentShell) {
-		
+
 		Display display = Display.getDefault();
-		loadDietdiary = new Shell(parentShell,SWT.TITLE | SWT.CLOSE | SWT.BORDER);// shell
+		loadDietdiary = new Shell(parentShell, SWT.TITLE | SWT.CLOSE
+				| SWT.BORDER);// shell
 		loadDietdiary.setSize(258, 262);
 		loadDietdiary.setText("DietDiary");
 
@@ -438,17 +464,15 @@ public class MainDietDiary {
 				// System.out.println(table.getSelectionIndex());
 				item2.setText("Load");
 				item.setText("Delete Selection");
-				
-				
+
 				item.addListener(SWT.Selection, new Listener() {
 					public void handleEvent(Event event) {
 						TableItem item3 = table_2.getItem(table_2
 								.getSelectionIndex());
 						try {
-							diary.deleteCalculator(item3
-									.getText());
+							diary.deleteCalculator(item3.getText());
 							table_2.remove(table_2.getSelectionIndex());
-							
+
 						} catch (ClassNotFoundException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -473,7 +497,8 @@ public class MainDietDiary {
 							datas.add(calc.getDietPerpose());
 							datas.add("" + calc.getPhysicalActivity());
 							loadDietdiary.dispose();
-							parentShell.dispose(); //to close the start menu window;
+							parentShell.dispose(); // to close the start menu
+													// window;
 						} catch (ClassNotFoundException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -498,16 +523,14 @@ public class MainDietDiary {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//double click listener
-		table_2.addListener(SWT.MouseDoubleClick, new Listener(){
+		// double click listener
+		table_2.addListener(SWT.MouseDoubleClick, new Listener() {
 
 			@Override
 			public void handleEvent(Event arg0) {
-				TableItem item3 = table_2.getItem(table_2
-						.getSelectionIndex());
+				TableItem item3 = table_2.getItem(table_2.getSelectionIndex());
 				try {
-					BodyCalculator calc = diary.loadCalculator(item3
-							.getText());
+					BodyCalculator calc = diary.loadCalculator(item3.getText());
 					datas.add("" + calc.getHeight());
 					datas.add("" + calc.getWeight());
 					datas.add("" + calc.getAge());
@@ -515,35 +538,33 @@ public class MainDietDiary {
 					datas.add(calc.getGender());
 					datas.add(calc.getDietPerpose());
 					datas.add("" + calc.getPhysicalActivity());
-					
+
 					loadDietdiary.dispose();
-					parentShell.dispose(); //to close the start menu window;
-					
+					parentShell.dispose(); // to close the start menu window;
+
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
 			}
-				
-			
-			
+
 		});
-		
+
 		loadDietdiary.open();
 		loadDietdiary.layout();
-		
-		/*while (!loadDietdiary.isDisposed()) {
-			if (!display.readAndDispatch())
-				display.sleep();
 
-		}*/
+		/*
+		 * while (!loadDietdiary.isDisposed()) { if (!display.readAndDispatch())
+		 * display.sleep();
+		 * 
+		 * }
+		 */
 	}
 
 	// Shitnite v Prozoreca
-	
-	
-	private void setTotalTable(ArrayList<Meal>dailymeals,Table table_1){
+
+	private void setTotalTable(ArrayList<Meal> dailymeals, Table table_1) {
 		double calories = 0;
 		double fat = 0;
 		double carbs = 0;
@@ -558,42 +579,43 @@ public class MainDietDiary {
 		table_1.clearAll();
 		int m = 0;
 		TableItem tableItem = new TableItem(table_1, SWT.NONE);
-		tableItem.setText(m++, String.valueOf( convertDouble(calories)) );
+		tableItem.setText(m++, String.valueOf(convertDouble(calories)));
 		tableItem.setText(m++, String.valueOf(convertDouble(fat)));
 		tableItem.setText(m++, String.valueOf(convertDouble(protein)));
 		tableItem.setText(m++, String.valueOf(convertDouble(carbs)));
-		
-		//setChart function
+
+		// setChart function
 		setChart(tableItem);
 	}
-	
-	
-	//often set in setTotalTable()
-	private void setChart(TableItem tableItem){
-		dataset.setValue("Carbs",
-				new Double(tableItem.getText(3)));
-		dataset.setValue("Prot",
-				new Double(tableItem.getText(2)));
-		dataset.setValue("Fat",
-				new Double(tableItem.getText(1)));
+
+	// often set in setTotalTable()
+	private void setChart(TableItem tableItem) {
+		dataset.setValue("Carbs", new Double(tableItem.getText(3)));
+		dataset.setValue("Prot", new Double(tableItem.getText(2)));
+		dataset.setValue("Fat", new Double(tableItem.getText(1)));
 		int m = 0;
-		if (Double.valueOf((tableItem.getText(m++))) == 0.0 && Double.valueOf((tableItem.getText(m++))) == 0.0 && Double.valueOf((tableItem.getText(m++))) == 0.0
+		if (Double.valueOf((tableItem.getText(m++))) == 0.0
+				&& Double.valueOf((tableItem.getText(m++))) == 0.0
+				&& Double.valueOf((tableItem.getText(m++))) == 0.0
 				&& Double.valueOf((tableItem.getText(m++))) == 0.0) {
 			chartcomposite.setVisible(false);
 		}
 	}
-	
-	
-	private double convertDouble(double d){													//Converting double to some format
+
+	private double convertDouble(double d) { // Converting double to some format
 		DecimalFormatSymbols symbols = DecimalFormatSymbols.getInstance();
 		symbols.setDecimalSeparator('.');
-		DecimalFormat df = new DecimalFormat("#.##",symbols); 
-		return  Double.valueOf(df.format(d));
+		DecimalFormat df = new DecimalFormat("#.##", symbols);
+		return Double.valueOf(df.format(d));
 	}
-	
-	protected void createContents() {
-		
+
+	protected void createContents(boolean test,boolean test2,boolean test3) {
+
 		// final Diary diary = new Diary();
+		if(datas.isEmpty()){
+			for(int i=0;i<=6;i++)
+				datas.add(""+ i);
+		}
 		final ArrayList<Meal> dailymeals = new ArrayList<Meal>();
 		shlDietdiary = new Shell(SWT.TITLE | SWT.CLOSE | SWT.BORDER);// shell
 		shlDietdiary.setSize(529, 613);
@@ -601,8 +623,6 @@ public class MainDietDiary {
 
 		TabFolder tabFolder = new TabFolder(shlDietdiary, SWT.NONE);
 		tabFolder.setBounds(0, 0, 524, 575);
-		
-		
 
 		// Item (foldera)
 		// Hranene : sudurga se vsichko svurzano s taba
@@ -611,8 +631,16 @@ public class MainDietDiary {
 
 		TabItem tabItem_1 = new TabItem(tabFolder, SWT.NONE);
 		tabItem_1.setText("Диета");
-		
-		StartMenu();
+
+		if(test==true){
+			StartMenu(test);
+		}
+		if(test2==true){
+			register(startDietDiary,test);
+		}
+		if(test3==true){
+			StartMenu(test);
+		}
 
 		// suzdavane na obekt vuv foldera
 		Composite composite = new Composite(tabFolder, SWT.NONE);
@@ -680,7 +708,7 @@ public class MainDietDiary {
 		Menu menu = new Menu(shlDietdiary, SWT.POP_UP);
 		table.setMenu(menu);
 		// item za ime na produkta i delete selectiona mu
-		//final MenuItem item2 = new MenuItem(menu, SWT.NONE);
+		// final MenuItem item2 = new MenuItem(menu, SWT.NONE);
 		MenuItem item = new MenuItem(menu, SWT.PUSH);
 		// System.out.println(table.getSelectionIndex());
 		item.setText("Delete Selection");
@@ -701,24 +729,23 @@ public class MainDietDiary {
 		table_1.setBounds(10, 472, 499, 65);
 		table_1.setHeaderVisible(true);
 		table_1.setLinesVisible(true);
-	//	final TableItem tableItem2 = new TableItem(table_1, SWT.NONE);
+		// final TableItem tableItem2 = new TableItem(table_1, SWT.NONE);
 		TableColumn tblclmnKcal = new TableColumn(table_1, SWT.NONE);
 		// Listener v koito se advat elementite na table_1
-			
+
 		table.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				Menu menu = new Menu(shlDietdiary, SWT.POP_UP);
 				table.setMenu(menu);
-				
+
 				MenuItem item = new MenuItem(menu, SWT.PUSH);
 				// System.out.println(table.getSelectionIndex());
-			//	String h = names.get(table.getSelectionIndex());
+				// String h = names.get(table.getSelectionIndex());
 				item.setText("Delete Selection");
 				item.addListener(SWT.Selection, new Listener() {
 					public void handleEvent(Event event) {
 						Meal meal1 = dailymeals.get(table.getSelectionIndex());
-					
-						
+
 						dailymeals.remove(table.getSelectionIndex());
 						String day;
 						String month;
@@ -733,49 +760,43 @@ public class MainDietDiary {
 							month = "0" + monthh;
 						} else
 							month = "" + monthh;
-						String datee = day
-								+ "/" + month + "/" + dateTime.getYear();
+						String datee = day + "/" + month + "/"
+								+ dateTime.getYear();
 						try {
 							diary.deleteMeal(meal1, datee);
 						} catch (ClassNotFoundException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						
+
 						table.remove(table.getSelectionIndices());
-						
-						
-						setTotalTable(dailymeals,table_1);
-						
-						/*double calories = 0;
-						double fat = 0;
-						double carbs = 0;
-						double protein = 0;
-						for (Meal meal : dailymeals) {
-							calories += meal.getCalories();
-							fat += meal.getFat();
-							protein += meal.getProtein();
-							carbs += meal.getCarbs();
-						}
-						System.out.println(fat + "in delete");
-						table_1.removeAll();
-						table_1.clearAll();
-						int m = 0;
-						TableItem tableItem7 = new TableItem(table_1, SWT.NONE);
-						tableItem7.setText(m++, "asd");
-						tableItem7.setText(m++, String.valueOf(fat));
-						tableItem7.setText(m++, String.valueOf(protein));
-						tableItem7.setText(m++, String.valueOf(carbs));*/
-						/*dataset.setValue("Carbs",
-								new Double(tableItem7.getText(3)));
-						dataset.setValue("Prot",
-								new Double(tableItem7.getText(2)));
-						dataset.setValue("Fat",
-								new Double(tableItem7.getText(1)));
-						if (calories == 0.0 && fat == 0.0 && protein == 0.0
-								&& carbs == 0.0) {
-							chartcomposite.setVisible(false);
-						}*/
+
+						setTotalTable(dailymeals, table_1);
+
+						/*
+						 * double calories = 0; double fat = 0; double carbs =
+						 * 0; double protein = 0; for (Meal meal : dailymeals) {
+						 * calories += meal.getCalories(); fat += meal.getFat();
+						 * protein += meal.getProtein(); carbs +=
+						 * meal.getCarbs(); } System.out.println(fat +
+						 * "in delete"); table_1.removeAll();
+						 * table_1.clearAll(); int m = 0; TableItem tableItem7 =
+						 * new TableItem(table_1, SWT.NONE);
+						 * tableItem7.setText(m++, "asd");
+						 * tableItem7.setText(m++, String.valueOf(fat));
+						 * tableItem7.setText(m++, String.valueOf(protein));
+						 * tableItem7.setText(m++, String.valueOf(carbs));
+						 */
+						/*
+						 * dataset.setValue("Carbs", new
+						 * Double(tableItem7.getText(3)));
+						 * dataset.setValue("Prot", new
+						 * Double(tableItem7.getText(2)));
+						 * dataset.setValue("Fat", new
+						 * Double(tableItem7.getText(1))); if (calories == 0.0
+						 * && fat == 0.0 && protein == 0.0 && carbs == 0.0) {
+						 * chartcomposite.setVisible(false); }
+						 */
 
 					}
 				});
@@ -846,14 +867,14 @@ public class MainDietDiary {
 		DateFormat df = new SimpleDateFormat("       HH:mm");
 		java.util.Date today = Calendar.getInstance().getTime();
 		String reportDate = df.format(today);
-		
+
 		double calories = 0.0;
 		double protein = 0.0;
 		double carbs = 0.0;
 		double fat = 0.0;
 		try {
 			ArrayList<Meal> todayMeals = diary.findEatenMealsByDate(todayDate);
-			for(Meal meal : todayMeals){
+			for (Meal meal : todayMeals) {
 				int count = 0;
 				TableItem tableItem = new TableItem(table, SWT.NONE);
 				tableItem.setText(count++, meal.getName());
@@ -862,11 +883,11 @@ public class MainDietDiary {
 				tableItem.setText(count++, String.valueOf(meal.getFat()));
 				tableItem.setText(count++, String.valueOf(meal.getProtein()));
 				tableItem.setText(count++, String.valueOf(meal.getCarbs()));
-			
-				calories+=meal.getCalories();
-				protein+=meal.getProtein();
-				carbs+=meal.getCarbs();
-				fat+=meal.getFat();		
+
+				calories += meal.getCalories();
+				protein += meal.getProtein();
+				carbs += meal.getCarbs();
+				fat += meal.getFat();
 			}
 			loadedCalories = calories;
 			loadedProtein = protein;
@@ -878,19 +899,16 @@ public class MainDietDiary {
 			tableItem.setText(2, String.valueOf(protein));
 			tableItem.setText(3, String.valueOf(carbs));
 
-			dataset.setValue("Carbs",
-					new Double(tableItem.getText(3)));
-			dataset.setValue("Prot",
-					new Double(tableItem.getText(2)));
-			dataset.setValue("Fat",
-					new Double(tableItem.getText(1)));
+			dataset.setValue("Carbs", new Double(tableItem.getText(3)));
+			dataset.setValue("Prot", new Double(tableItem.getText(2)));
+			dataset.setValue("Fat", new Double(tableItem.getText(1)));
 			chartcomposite.setVisible(true);
 			dailymeals.addAll(todayMeals); // eddited by alex
 		} catch (ClassNotFoundException e3) {
 			// TODO Auto-generated catch block
 			e3.printStackTrace();
 		}
-		
+
 		Label label_8 = new Label(composite_1, SWT.NONE);
 		label_8.setBounds(26, 13, 47, 18);
 		label_8.setText("\u0418\u043C\u0435");
@@ -951,7 +969,7 @@ public class MainDietDiary {
 				button_4.setSelection(false);
 			}
 		});
-		
+
 		btnCheckButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -985,13 +1003,13 @@ public class MainDietDiary {
 
 		Label label_12 = new Label(composite_1, SWT.NONE);
 		label_12.setBounds(26, 172, 200, 15);
-		label_12.setText("\u041A\u043E\u043B\u043A\u043E \u043F\u044A\u0442\u0438 \u0442\u0440\u0435\u043D\u0438\u0440\u0430\u0442\u0435 ? /\u0441\u0435\u0434\u043C\u0438\u0447\u043D\u043E");
+		label_12.setText("Колко пъти стренирате седмично?");
 
 		text_6 = new Text(composite_1, SWT.BORDER);
 		text_6.setEnabled(false);
 		text_6.setBounds(232, 169, 76, 21);
 		text_6.setText(datas.get(6));
-	
+
 		String dietPerpose = "Задържа";
 
 		if (datas.get(4).equals("мъж")) {
@@ -1034,25 +1052,24 @@ public class MainDietDiary {
 		final Label lblNewLabel_4 = new Label(composite_1, SWT.NONE);
 		lblNewLabel_4.setBounds(419, 229, 55, 15);
 		lblNewLabel_4.setText("" + calculator.getCaloriesLimit());
-		
+
 		Button btnTrainDiary = new Button(composite_1, SWT.NONE);
 		btnTrainDiary.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				
+
 				Display display = Display.getDefault();
 				Shell brShell = new Shell(SWT.TITLE | SWT.CLOSE | SWT.BORDER);// shell
-				brShell.setSize(1370,768);
+				brShell.setSize(1370, 768);
 				brShell.setText("Browser");
 
 				TabFolder tabFolder = new TabFolder(brShell, SWT.NONE);
 				TabItem tabItem = new TabItem(tabFolder, SWT.NONE);
 				tabItem.setText("Browser");
 
-				
 				DBrowser dbr = new DBrowser();
-				dbr.Start(display,brShell);
-				
+				dbr.Start(display, brShell);
+
 			}
 		});
 		btnTrainDiary.setBounds(427, 512, 75, 25);
@@ -1074,18 +1091,16 @@ public class MainDietDiary {
 		}
 
 		// getRatesListener
-		
-	
+
 		btnGetRates.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 
 				String text = combo.getText();
 				Meal dummy = null;
-				
-				
+
 				String day;
 				String month;
-	
+
 				int monthh = dateTime.getMonth();
 				monthh++;
 				if (dateTime.getDay() < 10) {
@@ -1098,66 +1113,58 @@ public class MainDietDiary {
 					month = "" + monthh;
 				int i = Integer.parseInt(text_1.getText());
 				try {
-					dummy = diary.searchMeal(text, i,day
-							+ "/" + month + "/" + dateTime.getYear());
+					dummy = diary.searchMeal(text, i, day + "/" + month + "/"
+							+ dateTime.getYear());
 					if (dummy != null) {
-						
+
 						table_1.removeAll();
 						names.add(dummy.getName());
 						TableItem tableItem = new TableItem(table, SWT.NONE);
-						
+
 						int h = 0;
 						int m = 0;
 						DateFormat df = new SimpleDateFormat("       HH:mm");
 						java.util.Date today = Calendar.getInstance().getTime();
 						String reportDate = df.format(today);
-						
+
 						double calories = 0;
 						double fat = 0;
 						double protein = 0;
 						double carbs = 0;
-						
-						
+
 						// tableItem.setText(h++, Integer.toString(++b));
 						tableItem.setText(h++, dummy.getName());
 						tableItem.setText(h++, reportDate);
 						System.out.println(dummy.getCalories());
 						tableItem.setText(h++,
 								String.valueOf(dummy.getCalories()));
-						tableItem.setText(h++,
-								String.valueOf(dummy.getFat()));
+						tableItem.setText(h++, String.valueOf(dummy.getFat()));
 						tableItem.setText(h++,
 								String.valueOf(dummy.getProtein()));
-						tableItem.setText(h++,
-								String.valueOf(dummy.getCarbs()));
-						
-						
-						//calculate total table and set chart
+						tableItem.setText(h++, String.valueOf(dummy.getCarbs()));
+
+						// calculate total table and set chart
 						dailymeals.add(dummy);
-						setTotalTable(dailymeals,table_1);
-						
-						
-						/*for (Meal meal : dailymeals) {
-							calories += meal.getCalories();
-							fat += meal.getFat();
-							protein += meal.getProtein();
-							carbs +=meal.getCarbs();
-						} 
-						
-						TableItem tableItem1000 = new TableItem(table_1, SWT.NONE);
-						tableItem1000.setText(m++, String.valueOf(calories));
-						tableItem1000.setText(m++, String.valueOf(fat));
-						tableItem1000.setText(m++, String.valueOf(protein));
-						tableItem1000.setText(m++, String.valueOf(carbs));
-						dataset.setValue("Carbs",
-								new Double(tableItem1000.getText(3)));
-						dataset.setValue("Prot",
-								new Double(tableItem1000.getText(2)));
-						dataset.setValue("Fat",
-								new Double(tableItem1000.getText(1)));
-						chartcomposite.setVisible(true);*/
-						
-						
+						setTotalTable(dailymeals, table_1);
+
+						/*
+						 * for (Meal meal : dailymeals) { calories +=
+						 * meal.getCalories(); fat += meal.getFat(); protein +=
+						 * meal.getProtein(); carbs +=meal.getCarbs(); }
+						 * 
+						 * TableItem tableItem1000 = new TableItem(table_1,
+						 * SWT.NONE); tableItem1000.setText(m++,
+						 * String.valueOf(calories)); tableItem1000.setText(m++,
+						 * String.valueOf(fat)); tableItem1000.setText(m++,
+						 * String.valueOf(protein)); tableItem1000.setText(m++,
+						 * String.valueOf(carbs)); dataset.setValue("Carbs", new
+						 * Double(tableItem1000.getText(3)));
+						 * dataset.setValue("Prot", new
+						 * Double(tableItem1000.getText(2)));
+						 * dataset.setValue("Fat", new
+						 * Double(tableItem1000.getText(1)));
+						 * chartcomposite.setVisible(true);
+						 */
 
 					}
 				} catch (ClassNotFoundException e1) {
@@ -1167,18 +1174,17 @@ public class MainDietDiary {
 			}
 
 		});
-		
-		
+
 		dateTime.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				// den mesec godina
 				table.removeAll();
 				table_1.removeAll();
-				
+
 				dailymeals.removeAll(dailymeals);
 				String day;
 				String month;
-				int m=0;
+				int m = 0;
 				int monthh = dateTime.getMonth();
 				monthh++;
 				if (dateTime.getDay() < 10) {
@@ -1195,67 +1201,69 @@ public class MainDietDiary {
 					DateFormat df = new SimpleDateFormat("       HH:mm");
 					java.util.Date today = Calendar.getInstance().getTime();
 					String reportDate = df.format(today);
-					
+
 					for (Meal meeal : mealls) {
 						System.out.println(meeal.getName());
-						TableItem item=new TableItem(table,SWT.NONE);
-						
+						TableItem item = new TableItem(table, SWT.NONE);
+
 						// tableItem.setText(h++, Integer.toString(++b));
 						item.setText(m++, meeal.getName());
 						item.setText(m++, reportDate);
-						item.setText(m++,
-								String.valueOf(meeal.getCalories()));
-						item.setText(m++,
-								String.valueOf(meeal.getFat()));
-						item.setText(m++,
-								String.valueOf(meeal.getProtein()));
-						item.setText(m++,
-								String.valueOf(meeal.getCarbs()));
-						dailymeals.add(new Meal(meeal.getName(), 
-								 meeal.getCalories(), meeal.getCarbs(), meeal.getProtein(),meeal.getFat()));
-					m=0;
+						item.setText(m++, String.valueOf(meeal.getCalories()));
+						item.setText(m++, String.valueOf(meeal.getFat()));
+						item.setText(m++, String.valueOf(meeal.getProtein()));
+						item.setText(m++, String.valueOf(meeal.getCarbs()));
+						dailymeals.add(new Meal(meeal.getName(), meeal
+								.getCalories(), meeal.getCarbs(), meeal
+								.getProtein(), meeal.getFat()));
+						m = 0;
 					}
 					double calories = 0;
 					double fat = 0;
 					double protein = 0;
 					double carbs = 0;
-					setTotalTable(mealls,table_1);
-					/*for (Meal meal : mealls) {
-							calories += meal.getCalories();
-							fat += meal.getFat();
-							protein += meal.getProtein();
-							carbs += meal.getCarbs();
-					}
-					m=0;
-						TableItem tableItem2000 = new TableItem(table_1, SWT.NONE);
-					//	loadedCalories = calories;
-					//	loadedProtein = protein;
-					//	loadedCarbs = carbs;
-					//	loadedFat = fat;
-						System.out.println(loadedCalories + "*********************");
-						tableItem2000.setText(m++, String.valueOf(calories));
-						tableItem2000.setText(m++, String.valueOf(fat));
-						tableItem2000.setText(m++, String.valueOf(protein));
-						tableItem2000.setText(m++, String.valueOf(carbs));
-						dataset.setValue("Carbs",
-								new Double(tableItem2000.getText(3)));
-						dataset.setValue("Prot",
-								new Double(tableItem2000.getText(2)));
-						dataset.setValue("Fat",
-								new Double(tableItem2000.getText(1)));
-						chartcomposite.setVisible(true);
-						System.out.println(m);
-						m = 0;*/
-					
+					setTotalTable(mealls, table_1);
+					/*
+					 * for (Meal meal : mealls) { calories +=
+					 * meal.getCalories(); fat += meal.getFat(); protein +=
+					 * meal.getProtein(); carbs += meal.getCarbs(); } m=0;
+					 * TableItem tableItem2000 = new TableItem(table_1,
+					 * SWT.NONE); // loadedCalories = calories; // loadedProtein
+					 * = protein; // loadedCarbs = carbs; // loadedFat = fat;
+					 * System.out.println(loadedCalories +
+					 * "*********************"); tableItem2000.setText(m++,
+					 * String.valueOf(calories)); tableItem2000.setText(m++,
+					 * String.valueOf(fat)); tableItem2000.setText(m++,
+					 * String.valueOf(protein)); tableItem2000.setText(m++,
+					 * String.valueOf(carbs)); dataset.setValue("Carbs", new
+					 * Double(tableItem2000.getText(3)));
+					 * dataset.setValue("Prot", new
+					 * Double(tableItem2000.getText(2)));
+					 * dataset.setValue("Fat", new
+					 * Double(tableItem2000.getText(1)));
+					 * chartcomposite.setVisible(true); System.out.println(m); m
+					 * = 0;
+					 */
+
 				} catch (ClassNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
-				
-				
+
 			}
 		});
-
+		lab.add(label_1);
+		lab.add(label_2);
+		lab.add(label);
+		lab.add(label_4);
+		lab.add(label_5);
+		lab.add(label_6);
+		lab.add(label_7);
+		lab.add(label_8);
+		lab.add(label_9);
+		lab.add(label_10);
+		lab.add(label_11);
+		lab.add(label_12);
+		
 	}
 }
