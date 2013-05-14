@@ -1,0 +1,1154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Excersies</title>
+<link rel="stylesheet" type="text/css" href="Excersises.css">
+<script src="jquery-1.9.1.min.js"> </script>
+<script>
+
+
+
+$(document).ready(function(){
+	var prevItem=0;
+	
+	$(":input").click(function(e){
+		$(".info1").hide();
+		if($(this).is(':checked')){
+			$("."+$(this).val()).parent().show();
+			
+		}
+		else{
+			$("."+$(this).val()).parent().hide();
+		}
+		
+		
+	})
+	
+	
+	
+	
+	
+	
+	$(".name a").click(function(e){
+		if(prevItem!=0){
+		
+			
+				$("#clicked").children(".item").css({"display":"none"});
+				$("#clicked").css({"position":"relative","left":"","top":"","width":"318px"});
+				$("#clicked").attr("id","last");
+				
+				
+				$(e.target).parent().attr("id","clicked");
+				
+				$(this).parent().css({"position":"absolute","width":"648px"});
+				$(this).parent().animate({
+			       	"left": "30%",
+			       	"top":"77px",
+				    },15,function(){
+				    	$(this).children(".item").slideToggle("slow");
+				    	
+				    	
+				    });
+			
+			
+		}else{
+			
+			prevItem = $(e.target).parent().attr("id","clicked");
+			
+			$(this).parent().css({"position":"absolute","width":"648px"});
+			$(this).parent().animate({
+		       	"left": "30%",
+		       	"top":"77px",
+			    },15,function(){
+			    	$(this).children(".item").slideToggle("slow");
+			    	
+			    	
+			    });
+			
+				
+			}
+		
+			
+	});
+	
+});
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="menu_wrapper">
+	
+		
+		<div class="menu_item" ><a href="Excersises.html" >Excersies</a></div>
+		<div class="menu_item"><a href="#">Home Excersises</a></div>
+		
+	
+	
+	
+	
+</div>
+	<div class="body">
+	<div class="part2"></div>
+		 
+		 
+		 <div class="name">
+			
+			<img src="excersises/158_1.jpg" />
+			<a href="#" > Hammer Curl </a><br>
+			<a href="#" class="biceps"> Category: Biceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/158_1.jpg" />
+						<img src="excersises/158_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Stand up with your torso upright and a dumbbell in each hand being held at arms length. The elbows should be close to the torso.</li>
+								<li>The palms of the hands should be facing your torso. This will be your starting position.</li>
+								<li>While holding the upper arm stationary, curl the right weight forward while contracting the biceps as you breathe out. Continue the movement until your biceps is fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a second as you squeeze the biceps. Tip: Only the forearms should move.</li>
+								<li>Slowly begin to bring the dumbbells back to starting position as your breathe in.</li>
+								<li>Repeat the movement with the left hand. This equals one repetition.</li>
+								<li>Continue alternating in this manner for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 
+		 <div class="name">
+			
+			<img src="excersises/169_1.jpg" />
+			<a href="#" > Bar Curl </a><br>
+			<a href="#" class="biceps"> Category: Biceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/169_1.jpg" />
+						<img src="excersises/169_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Stand up with your torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting position.</li>
+								<li>While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out. Tip: Only the forearms should move.</li>
+								<li>Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard.</li>
+								<li>Slowly begin to bring the bar back to starting position as your breathe in.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		  <div class="name">
+			
+			<img src="excersises/136_1.jpg" />
+			<a href="#" > Concentration Curls </a><br>
+			<a href="#" class="biceps"> Category: Biceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/136_1.jpg" />
+						<img src="excersises/136_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Sit down on a flat bench with one dumbbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor.</li>
+								<li>Use your right arm to pick the dumbbell up. Place the back of your right upper arm on the top of your inner right thigh. Rotate the palm of your hand until it is facing forward away from your thigh. Tip: Your arm should be extended and the dumbbell should be above the floor. This will be your starting position.</li>
+								<li>While holding the upper arm stationary, curl the weights forward while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. Tip: At the top of the movement make sure that the little finger of your arm is higher than your thumb. This guarantees a good contraction. Hold the contracted position for a second as you squeeze the biceps.</li>
+								<li>Slowly begin to bring the dumbbells back to starting position as your breathe in. Caution: Avoid swinging motions at any time.</li>
+								<li>Repeat for the recommended amount of repetitions. Then repeat the movement with the left arm.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		  <div class="name">
+			
+			<img src="excersises/223_1.jpg" />
+			<a href="#" > Dumbel Biceps Curl </a><br>
+			<a href="#" class="biceps"> Category: Biceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/223_1.jpg" />
+						<img src="excersises/223_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Stand up straight with a dumbbell in each hand at arm's length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position.</li>
+								<li>Now, keeping the upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps.</li>
+								<li>Then, inhale and slowly begin to lower the dumbbells back to the starting position.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		   <div class="name">
+			
+			<img src="excersises/255_1.jpg" />
+			<a href="#" > One Arm Dumbbell Preacher Curl </a><br>
+			<a href="#" class="biceps"> Category: Biceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/255_1.jpg" />
+						<img src="excersises/255_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Grab a dumbbell with the right arm and place the upper arm on top of the preacher bench or the incline bench. The dumbbell should be held at shoulder length. This will be your starting position.</li>
+								<li>As you breathe in, slowly lower the dumbbell until your upper arm is extended and the biceps is fully stretched.</li>
+								<li>As you exhale, use the biceps to curl the weight up until your biceps is fully contracted and the dumbbell is at shoulder height. Again, remember that to ensure full contraction you need to bring that small finger higher than the thumb.</li>
+								<li>Squeeze the biceps hard for a second at the contracted position and repeat for the recommended amount of repetitions.</li>
+								<li>Switch arms and repeat the movement.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/663_1.jpg" />
+			<a href="#" > Bench Press - Powerlifting </a><br>
+			<a href="#" class="triceps"> Category: Triceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/663_1.jpg" />
+						<img src="excersises/663_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Begin by lying on the bench, getting your head beyond the bar if possible. Tuck your feet underneath you and arch your back. Using the bar to help support your weight, lift your shoulder off the bench and retract them, squeezing the shoulder blades together. Use your feet to drive your traps into the bench. Maintain this tight body position throughout the movement.</li>
+								<li>However wide your grip, it should cover the ring on the bar. Pull the bar out of the rack without protracting your shoulders. Focus on squeezing the bar and trying to pull it apart.</li>
+								<li>Lower the bar to your lower chest or upper stomach. The bar, wrist, and elbow should stay in line at all times.</li>
+								<li>Pause when the barbell touches your torso, and then drive the bar up with as much force as possible. The elbows should be tucked in until lockout.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		   <div class="name">
+			
+			<img src="excersises/80_1.jpg" />
+			<a href="#" > Cable One Arm Tricep Extension </a><br>
+			<a href="#" class="triceps"> Category: Triceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/80_1.jpg" />
+						<img src="excersises/80_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>With your right hand, grasp a single handle attached to the high-cable pulley using a supinated (underhand; palms facing up) grip. You should be standing directly in front of the weight stack.</li>
+								<li>Now pull the handle down so that your upper arm and elbow are locked in to the side of your body. Your upper arm and forearm should form an acute angle (less than 90-degrees). You can keep the other arm by the waist and you can have one leg in front of you and the other one back for better balance. This will be your starting position.</li>
+								<li>As you contract the triceps, move the single handle attachment down to your side until your arm is straight. Breathe out as you perform this movement. Tip: Only the forearms should move. Your upper arms should remain stationary at all times.</li>
+								<li>Squeeze the triceps and hold for a second in this contracted position.</li>
+								<li>Slowly return the handle to the starting position.</li>
+								<li>Repeat for the recommended amount of repetitions and then perform the same movement with the other arm.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/166_2.jpg" />
+			<a href="#" > Decline EZ Bar Triceps Extension </a><br>
+			<a href="#" class="triceps"> Category: Triceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/166_1.jpg" />
+						<img src="excersises/166_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Secure your legs at the end of the decline bench and slowly lay down on the bench.</li>
+								<li>Using a close grip (a grip that is slightly less than shoulder width), lift the EZ bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.</li>
+								<li>As you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.</li>
+								<li>Lift the bar back to the starting position by contracting the triceps and exhaling.</li>
+								<li>Repeat until the recommended amount of repetitions is performed.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		   <div class="name">
+			
+			<img src="excersises/324_2.jpg" />
+			<a href="#" > Dumbbell One-Arm Triceps Extension </a><br>
+			<a href="#" class="triceps"> Category: Triceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/324_1.jpg" />
+						<img src="excersises/324_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Grab a dumbbell and either sit on a military press bench or a utility bench that has a back support on it as you place the dumbbells upright on top of your thighs or stand up straight.</li>
+								<li>Clean the dumbbell up to bring it to shoulder height and then extend the arm over your head so that the whole arm is perpendicular to the floor and next to your head. The dumbbell should be on top of you. The other hand can be kept fully extended to the side, by the waist, supporting the upper arm that has the dumbbell or grabbing a fixed surface.</li>
+								<li>Rotate the wrist so that the palm of your hand is facing forward and the pinkie is facing the ceiling. This will be your starting position.</li>
+								<li>Slowly lower the dumbbell behind your head as you hold the upper arm stationary. Inhale as you perform this movement and pause when your triceps are fully stretched.</li>
+								<li>Return to the starting position by flexing your triceps as you breathe out. Tip: It is imperative that only the forearm moves. The upper arm should remain at all times stationary next to your head.</li>
+								<li>Repeat for the recommended amount of repetitions and switch arms.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/357_1.jpg" />
+			<a href="#" > Lying Close-Grip Barbell Triceps Extension Behind The Head </a><br>
+			<a href="#" class="triceps"> Category: Triceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/357_1.jpg" />
+						<img src="excersises/357_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>While holding a barbell or EZ Curl bar with a pronated grip (palms facing forward), lie on your back on a flat bench with your head close to the end of the bench. Tip: If you are holding a barbell grab it using a shoulder-width grip and if you are using an E-Z Bar grab it on the inner handles.</li>
+								<li>Extend your arms in front of you and slowly bring the bar back in a semi circular motion (while keeping the arms extended) to a position over your head. At the end of this step your arms should be overhead and parallel to the floor. This will be your starting position. Tip: Keep your elbows in at all times.</li>
+								<li>As you inhale, lower the bar by bending at the elbows and while keeping the upper arm stationary. Keep lowering the bar until your forearms are perpendicular to the floor.</li>
+								<li>As you exhale bring the bar back up to the starting position by pushing the bar up in a semi-circular motion until the lower arms are also parallel to the floor. Contract the triceps hard at the top of the movement for a second. Tip: Again, only the forearms should move. The upper arms should remain stationary at all times.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		   <div class="name">
+			
+			<img src="excersises/363_1.jpg" />
+			<a href="#" > Push-Ups - Close Triceps Position  </a><br>
+			<a href="#" class="triceps"> Category: Triceps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/363_1.jpg" />
+						<img src="excersises/363_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie on the floor face down and place your hands closer than shoulder width for a close hand position. Make sure that you are holding your torso up at arms' length.</li>
+								<li>Lower yourself until your chest almost touches the floor as you inhale.</li>
+								<li>Using your triceps and some of your pectoral muscles, press your upper body back up to the starting position and squeeze your chest. Breathe out as you perform this step.</li>
+								<li>After a second pause at the contracted position, repeat the movement for the prescribed amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		    <div class="name">
+			
+			<img src="excersises/64_1.jpg" />
+			<a href="#" > Barbell Full Squat  </a><br>
+			<a href="#" class="legs"> Category: Legs </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/64_1.jpg" />
+						<img src="excersises/64_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just above shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.</li>
+								<li>Hold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.</li>
+								<li>Step away from the rack and position your legs using a shoulder-width medium stance with the toes slightly pointed out. Keep your head up at all times and maintain a straight back. This will be your starting position.</li>
+								<li>Begin to slowly lower the bar by bending the knees and sitting back with your hips as you maintain a straight posture with the head up. Continue down until your hamstrings are on your calves. Inhale as you perform this portion of the movement.</li>
+								<li>Begin to raise the bar as you exhale by pushing the floor with the heel or middle of your foot as you straighten the legs and extend the hips to go back to the starting position.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 <div class="name">
+			
+			<img src="excersises/32_1.jpg" />
+			<a href="#" > Dumbbell Lunges  </a><br>
+			<a href="#" class="legs"> Category: Legs </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/32_1.jpg" />
+						<img src="excersises/32_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Stand with your torso upright holding two dumbbells in your hands by your sides. This will be your starting position.</li>
+								<li>Step forward with your right leg around 2 feet or so from the foot being left stationary behind and lower your upper body down, while keeping the torso upright and maintaining balance. Inhale as you go down. Note: As in the other exercises, do not allow your knee to go forward beyond your toes as you come down, as this will put undue stress on the knee joint. Make sure that you keep your front shin perpendicular to the ground.</li>
+								<li>Using mainly the heel of your foot, push up and go back to the starting position as you exhale.</li>
+								<li>Repeat the movement for the recommended amount of repetitions and then perform with the left leg.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 
+		  
+		 <div class="name">
+			
+			<img src="excersises/42_1.jpg" />
+			<a href="#" >  Front Barbell Squat   </a><br>
+			<a href="#" class="legs"> Category: Legs </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/42_1.jpg" />
+						<img src="excersises/42_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack that best matches your height. Once the correct height is chosen and the bar is loaded, bring your arms up under the bar while keeping the elbows high and the upper arm slightly above parallel to the floor. Rest the bar on top of the deltoids and cross your arms while grasping the bar for total control.</li>
+								<li>Lift the bar off the rack by first pushing with your legs and at the same time straightening your torso.</li>
+								<li>Step away from the rack and position your legs using a shoulder width medium stance with the toes slightly pointed out. Keep your head up at all times as looking down will get you off balance and also maintain a straight back. This will be your starting position. (Note: For the purposes of this discussion we will use the medium stance described above which targets overall development; however you can choose any of the three stances described in the foot positioning section).</li>
+								<li>Begin to slowly lower the bar by bending the knees as you maintain a straight posture with the head up. Continue down until the angle between the upper leg and the calves becomes slightly less than 90-degrees (which is the point in which the upper legs are below parallel to the floor). Inhale as you perform this portion of the movement. Tip: If you performed the exercise correctly, the front of the knees should make an imaginary straight line with the toes that is perpendicular to the front. If your knees are past that imaginary line (if they are past your toes) then you are placing undue stress on the knee and the exercise has been performed incorrectly.</li>
+								<li>Begin to raise the bar as you exhale by pushing the floor mainly with the middle of your foot as you straighten the legs again and go back to the starting position.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		   
+		 <div class="name">
+			
+			<img src="excersises/53_1.jpg" />
+			<a href="#" >Leg Extensions   </a><br>
+			<a href="#" class="legs"> Category: Legs </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/53_1.jpg" />
+						<img src="excersises/53_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>For this exercise you will need to use a leg extension machine. First choose your weight and sit on the machine with your legs under the pad (feet pointed forward) and the hands holding the side bars. This will be your starting position. Tip: You will need to adjust the pad so that it falls on top of your lower leg (just above your feet). Also, make sure that your legs form a 90-degree angle between the lower and upper leg. If the angle is less than 90-degrees then that means the knee is over the toes which in turn creates undue stress at the knee joint. If the machine is designed that way, either look for another machine or just make sure that when you start executing the exercise you stop going down once you hit the 90-degree angle.</li>
+								<li>Using your quadriceps, extend your legs to the maximum as you exhale. Ensure that the rest of the body remains stationary on the seat. Pause a second on the contracted position.</li>
+								<li>Slowly lower the weight back to the original position as you inhale, ensuring that you do not go past the 90-degree angle limit.</li>
+								<li>Repeat for the recommended amount of times.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/57_1.jpg" />
+			<a href="#" >Leg Press   </a><br>
+			<a href="#" class="legs"> Category: Legs </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/57_1.jpg" />
+						<img src="excersises/57_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Using a leg press machine, sit down on the machine and place your legs on the platform directly in front of you at a medium (shoulder width) foot stance. (Note: For the purposes of this discussion we will use the medium stance described above which targets overall development; however you can choose any of the three stances described in the foot positioning section).</li>
+								<li>Lower the safety bars holding the weighted platform in place and press the platform all the way up until your legs are fully extended in front of you. Tip: Make sure that you do not lock your knees. Your torso and the legs should make a perfect 90-degree angle. This will be your starting position.</li>
+								<li>As you inhale, slowly lower the platform until your upper and lower legs make a 90-degree angle.</li>
+								<li>Pushing mainly with the heels of your feet and using the quadriceps go back to the starting position as you exhale.</li>
+								<li>Repeat for the recommended amount of repetitions and ensure to lock the safety pins properly once you are done. You do not want that platform falling on you fully loaded.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 <div class="name">
+			
+			<img src="excersises/2001_1.jpg" />
+			<a href="#" > Crunches </a><br>
+			<a href="#" class="abdominals"> Category: Abominals </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/2001_1.jpg" />
+						<img src="excersises/2001_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie face up with your whole body straight on a flat bench while holding a weight plate on top of your forehead. Tip: You will need to position yourself so that your shoulders are slightly above the end of a flat bench in order for the traps, neck and head to be off the bench. This will be your starting position.</li>
+								<li>While keeping the plate secure on your forehead slowly lower your head back in a semi-circular motion as you breathe in.</li>
+								<li>Raise your head back up to the starting position in a semi-circular motion as you breathe out. Hold the contraction for a second.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/163_1.jpg" />
+			<a href="#" > Cable Crunch </a><br>
+			<a href="#" class="abdominals"> Category: Abominals </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/163_1.jpg" />
+						<img src="excersises/163_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Kneel below a high pulley that contains a rope attachment.</li>
+								<li>Grasp cable rope attachment and lower the rope until your hands are placed next to your face.</li>
+								<li>Flex your hips slightly and allow the weight to hyperextend the lower back. This will be your starting position.</li>
+								<li>With the hips stationary, flex the waist as you contract the abs so that the elbows travel towards the middle of the thighs. Exhale as you perform this portion of the movement and hold the contraction for a second.</li>
+								<li>Slowly return to the starting position as you inhale. Tip: Make sure that you keep constant tension on the abs throughout the movement. Also, do not choose a weight so heavy that the lower back handles the brunt of the work.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/107_1.jpg" />
+			<a href="#" >Toe Touchers </a><br>
+			<a href="#" class="abdominals"> Category: Abominals </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/107_1.jpg" />
+						<img src="excersises/107_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>To begin, lie down on the floor or an exercise mat with your back pressed against the floor. Your arms should be lying across your sides with the palms facing down.</li>
+								<li>Your legs should be touching each other. Slowly elevate your legs up in the air until they are almost perpendicular to the floor with a slight bend at the knees. Your feet should be parallel to the floor.</li>
+								<li>Move your arms so that they are fully extended at a 45 degree angle from the floor. This is the starting position.</li>
+								<li>While keeping your lower back pressed against the floor, slowly lift your torso and use your hands to try and touch your toes. Remember to exhale while perform this part of the exercise.</li>
+								<li>Slowly begin to lower your torso and arms back down to the starting position while inhaling. Remember to keep your arms straight out pointing towards your toes.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/360_1.jpg" />
+			<a href="#" >Barbell Bench Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/360_1.jpg" />
+						<img src="excersises/360_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position.</li>
+								<li>From the starting position, breathe in and begin coming down slowly until the bar touches your middle chest.</li>
+								<li>After a brief pause, push the bar back to the starting position as you breathe out. Focus on pushing the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position at the top of the motion, hold for a second and then start coming down slowly again. Tip: Ideally, lowering the weight should take about twice as long as raising it.</li>
+								<li>Repeat the movement for the prescribed amount of repetitions.</li>
+								<li>When you are done, place the bar back in the rack.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 <div class="name">
+			
+			<img src="excersises/305_1.jpg" />
+			<a href="#" >Barbell Guillotine Bench Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/305_1.jpg" />
+						<img src="excersises/305_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over your neck with your arms locked. This will be your starting position.</li>
+								<li>As you breathe in, bring the bar down slowly until it is about 1 inch from your neck.</li>
+								<li>After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. It should take at least twice as long to go down than to come up.</li>
+								<li>Repeat the movement for the prescribed amount of repetitions.</li>
+								<li>When you are done, place the bar back in the rack.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/34_3.jpg" />
+			<a href="#" >Decline Barbell Bench Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/34_3.jpg" />
+						<img src="excersises/34_4.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Secure your legs at the end of the decline bench and slowly lay down on the bench.</li>
+								<li>Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. The arms should be perpendicular to the floor. This will be your starting position. Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.</li>
+								<li>As you breathe in, come down slowly until you feel the bar on your lower chest.</li>
+								<li>After a second pause, bring the bar back to the starting position as you breathe out and push the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position, hold for a second and then start coming down slowly again. Tip: It should take at least twice as long to go down than to come up).</li>
+								<li>Repeat the movement for the prescribed amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 <div class="name">
+			
+			<img src="excersises/51_1.jpg" />
+			<a href="#" >Decline Dumbbell Bench Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/51_1.jpg" />
+						<img src="excersises/51_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Secure your legs at the end of the decline bench and lie down with a dumbbell on each hand on top of your thighs. The palms of your hand will be facing each other.</li>
+								<li>Once you are laying down, move the dumbbells in front of you at shoulder width.</li>
+								<li>Once at shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. This will be your starting position.</li>
+								<li>Bring down the weights slowly to your side as you breathe out. Keep full control of the dumbbells at all times. Tip: Throughout the motion, the forearms should always be perpendicular to the floor.</li>
+								<li>As you breathe out, push the dumbbells up using your pectoral muscles. Lock your arms in the contracted position, squeeze your chest, hold for a second and then start coming down slowly. Tip: It should take at least twice as long to go down than to come up..</li>
+								<li>Repeat the movement for the prescribed amount of repetitions of your training program.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 
+		 	 <div class="name">
+			
+			<img src="excersises/36_1.jpg" />
+			<a href="#" >Decline Dumbbell Flyess</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/36_1.jpg" />
+						<img src="excersises/36_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Secure your legs at the end of the decline bench and lie down with a dumbbell on each hand on top of your thighs. The palms of your hand will be facing each other.</li>
+								<li>Once you are laying down, move the dumbbells in front of you at shoulder width. The palms of the hands should be facing each other and the arms should be perpendicular to the floor and fully extended. This will be your starting position.</li>
+								<li>With a slight bend on your elbows in order to prevent stress at the biceps tendon, lower your arms out at both sides in a wide arc until you feel a stretch on your chest. Breathe in as you perform this portion of the movement. Tip: Keep in mind that throughout the movement, the arms should remain stationary; the movement should only occur at the shoulder joint.</li>
+								<li>Return your arms back to the starting position as you squeeze your chest muscles and breathe out. Tip: Make sure to use the same arc of motion used to lower the weights.</li>
+								<li>Hold for a second at the contracted position and repeat the movement for the prescribed amount of repetitions.</li>
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 <div class="name">
+			
+			<img src="excersises/1_1.jpg" />
+			<a href="#" >Dumbbell Bench Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/1_1.jpg" />
+						<img src="excersises/1_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie down on a flat bench with a dumbbell in each hand resting on top of your thighs. The palms of your hands will be facing each other.</li>
+								<li>Then, using your thighs to help raise the dumbbells up, lift the dumbbells one at a time so that you can hold them in front of you at shoulder width.</li>
+								<li>Once at shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. The dumbbells should be just to the sides of your chest, with your upper arm and forearm creating a 90 degree angle. Be sure to maintain full control of the dumbbells at all times. This will be your starting position.</li>
+								<li>Then, as you breathe out, use your chest to push the dumbbells up. Lock your arms at the top of the lift and squeeze your chest, hold for a second and then begin coming down slowly. Tip: Ideally, lowering the weight should take about twice as long as raising it.</li>
+								<li>Repeat the movement for the prescribed amount of repetitions of your training program.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 		 <div class="name">
+			
+			<img src="excersises/12_1.jpg" />
+			<a href="#" >Dumbbell Flyes</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/12_1.jpg" />
+						<img src="excersises/12_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie down on a flat bench with a dumbbell on each hand resting on top of your thighs. The palms of your hand will be facing each other.</li>
+								<li>Then using your thighs to help raise the dumbbells, lift the dumbbells one at a time so you can hold them in front of you at shoulder width with the palms of your hands facing each other. Raise the dumbbells up like you're pressing them, but stop and hold just before you lock out. This will be your starting position.</li>
+								<li>With a slight bend on your elbows in order to prevent stress at the biceps tendon, lower your arms out at both sides in a wide arc until you feel a stretch on your chest. Breathe in as you perform this portion of the movement. Tip: Keep in mind that throughout the movement, the arms should remain stationary; the movement should only occur at the shoulder joint.</li>
+								<li>Return your arms back to the starting position as you squeeze your chest muscles and breathe out. Tip: Make sure to use the same arc of motion used to lower the weights.</li>
+								<li>Hold for a second at the contracted position and repeat the movement for the prescribed amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 	 <div class="name">
+			
+			<img src="excersises/60_1.jpg" />
+			<a href="#" >Hammer Grip Incline DB Bench Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/60_1.jpg" />
+						<img src="excersises/60_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie back on an incline bench with a dumbbell on each hand on top of your thighs. The palms of your hand will be facing each other.</li>
+								<li>By using your thighs to help you get the dumbbells up, clean the dumbbells one arm at a time so that you can hold them at shoulder width.</li>
+								<li>Once at shoulder width, keep the palms of your hands with a neutral grip (palms facing each other). Keep your elbows flared out with the upper arms in line with the shoulders (perpendicular to the torso) and the elbows bent creating a 90-degree angle between the upper arm and the forearm. This will be your starting position.</li>
+								<li>Now bring down the weights slowly to your side as you breathe in. Keep full control of the dumbbells at all times.</li>
+								<li>As you breathe out, push the dumbbells up using your pectoral muscles. Lock your arms in the contracted position, hold for a second and then start coming down slowly. Tip: It should take at least twice as long to go down than to come up.</li>
+								<li>Repeat the movement for the prescribed amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 	 <div class="name">
+			
+			<img src="excersises/380_1.jpg" />
+			<a href="#" >Incline Dumbbell Press</a><br>
+			<a href="#" class="chest"> Category: Chest </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/380_1.jpg" />
+						<img src="excersises/380_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Lie back on an incline bench with a dumbbell in each hand atop your thighs. The palms of your hands will be facing each other.</li>
+								<li>Then, using your thighs to help push the dumbbells up, lift the dumbbells one at a time so that you can hold them at shoulder width.</li>
+								<li>Once you have the dumbbells raised to shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. This will be your starting position.</li>
+								<li>Be sure to keep full control of the dumbbells at all times. Then breathe out and push the dumbbells up with your chest.</li>
+								<li>Lock your arms at the top, hold for a second, and then start slowly lowering the weight. Tip Ideally, lowering the weights should take about twice as long as raising them.</li>
+								<li>Repeat the movement for the prescribed amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 	<div class="name">
+   
+		   <img src="excersises/112_1.jpg" />
+		   <a href="#" >Barbell Deadlift</a><br>
+		   <a href="#" class="back"> Category: Back </a>
+		    <div class="item">
+		    
+		     <div class="images">
+		      <img src="excersises/112_1.jpg" />
+		      <img src="excersises/112_2.jpg" />
+		      
+		     </div>
+		     
+		     <div class="desc">
+		       <ol>
+		        <li>Stand in front of a loaded barbell.</li>
+		        <li>While keeping the back as straight as possible, bend your knees, bend forward and grasp the bar using a medium (shoulder width) overhand grip. This will be the starting position of the exercise. Tip: If it is difficult to hold on to the bar with this grip, alternate your grip or use wrist straps.</li>
+		        <li>While holding the bar, start the lift by pushing with your legs while simultaneously getting your torso to the upright position as you breathe out. In the upright position, stick your chest out and contract the back by bringing the shoulder blades back. Think of how the soldiers in the military look when they are in standing in attention.</li>
+		        <li>Go back to the starting position by bending at the knees while simultaneously leaning the torso forward at the waist while keeping the back straight. When the weights on the bar touch the floor you are back at the starting position and ready to perform another repetition.</li>
+		        <li>Perform the amount of repetitions prescribed in the program.</li>
+		       </ol>
+		     </div>
+		    </div>  
+		   </div>
+		   
+		   <div class="name">
+   
+		   <img src="excersises/46_1.jpg" />
+		   <a href="#" >Chin-Up</a><br>
+		   <a href="#" class="back"> Category: Back </a>
+		    <div class="item">
+		    
+		     <div class="images">
+		      <img src="excersises/46_1.jpg" />
+		      <img src="excersises/46_2.jpg" />
+		      
+		     </div>
+		     
+		     <div class="desc">
+		       <ol>
+		        <li>Grab the pull-up bar with the palms facing forward using the prescribed grip. Note on grips: For a wide grip, your hands need to be spaced out at a distance wider than your shoulder width. For a medium grip, your hands need to be spaced out at a distance equal to your shoulder width and for a close grip at a distance smaller than your shoulder width.</li>
+		       	<li>As you have both arms extended in front of you holding the bar at the chosen grip width, bring your torso back around 30 degrees or so while creating a curvature on your lower back and sticking your chest out. This is your starting position.</li>
+				<li>Pull your torso up until the bar touches your upper chest by drawing the shoulders and the upper arms down and back. Exhale as you perform this portion of the movement. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. The upper torso should remain stationary as it moves through space and only the arms should move. The forearms should do no other work other than hold the bar.</li>
+				<li>After a second on the contracted position, start to inhale and slowly lower your torso back to the starting position when your arms are fully extended and the lats are fully stretched</li>
+				<li>Repeat this motion for the prescribed amount of repetitions.</li>
+		       </ol>
+		     </div>
+		    </div>  
+		   </div>
+		   
+		   
+		   	<div class="name">
+   
+			   <img src="excersises/20_1.jpg" />
+			   <a href="#" >Bent Over Barbell Row</a><br>
+			   <a href="#" class="back"> Category: Back </a>
+			    <div class="item">
+			    
+			     <div class="images">
+			      <img src="excersises/20_1.jpg" />
+			      <img src="excersises/20_2.jpg" />
+			      
+			     </div>
+			     
+			     <div class="desc">
+			       <ol>
+			        <li>Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.</li>
+			        <li>Now, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause.</li>
+			        <li>Then inhale and slowly lower the barbell back to the starting position.</li>
+			        <li>Repeat for the recommended amount of repetitions.</li>
+			       </ol>
+			     </div>
+			    </div>  
+			   </div>
+			   
+			   
+			   <div class="name">
+   
+		   <img src="excersises/18_1.jpg" />
+		   <a href="#" >Bent Over Two-Arm Long Bar Row</a><br>
+		   <a href="#" class="back"> Category: Back </a>
+		    <div class="item">
+		    
+		     <div class="images">
+		      <img src="excersises/18_1.jpg" />
+		      <img src="excersises/18_2.jpg" />
+		      
+		     </div>
+		     
+		     <div class="desc">
+		       <ol>
+		        <li>Put weight on one of the ends of an Olympic barbell. Make sure that you either place the other end of the barbell in the corner of two walls; or put a heavy object on the ground so the barbell cannot slide backward.</li>
+		        <li>Bend forward until your torso is as close to parallel with the floor as you can and keep your knees slightly bent.</li>
+		        <li>Now grab the bar with both arms just behind the plates on the side where the weight was placed and put your other hand on your knee. This will be your starting position.</li>
+		        <li>Pull the bar straight up with your elbows in (to maximize back stimulation) until the plates touch your lower chest. Squeeze the back muscles as you lift the weight up and hold for a second at the top of the movement. Breathe out as you lift the weight. Tip: Use a stirrup or double handle cable attachment by hooking it under the end of the bar. </li>
+		        <li>Slowly lower the bar to the starting position getting a nice stretch on the lats. Tip: Do not let the plates touch the floor. To ensure the best range of motion, I recommend using small plates (25-lb ones) as opposed to larger plates (like 35-45lb ones).</li>
+		        <li>Repeat for the recommended amount of repetitions.</li>
+		       </ol>
+		     </div>
+		    </div>  
+		   </div>
+		   
+		   
+		    <div class="name">
+			
+			<img src="excersises/13_1.jpg" />
+			<a href="#" >One-Arm Dumbbell Row</a><br>
+			<a href="#" class="back"> Category: Back </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/13_1.jpg" />
+						<img src="excersises/13_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Choose a flat bench and place a dumbbell on each side of it.</li>
+								<li>Place the right leg on top of the end of the bench, bend your torso forward from the waist until your upper body is parallel to the floor, and place your right hand on the other end of the bench for support.</li>
+								<li>Use the left hand to pick up the dumbbell on the floor and hold the weight while keeping your lower back straight. The palm of the hand should be facing your torso. This will be your starting position.</li>
+								<li>Pull the resistance straight up to the side of your chest, keeping your upper arm close to your side and keeping the torso stationary. Breathe out as you perform this step. Tip: Concentrate on squeezing the back muscles once you reach the full contracted position. Also, make sure that the force is performed with the back muscles and not the arms. Finally, the upper torso should remain stationary and only the arms should move. The forearms should do no other work except for holding the dumbbell; therefore do not try to pull the dumbbell up using the forearms.</li>
+								<li>Lower the resistance straight down to the starting position. Breathe in as you perform this step.</li>
+								<li>Repeat the movement for the specified amount of repetitions.</li>
+								<li>Switch sides and repeat again with the other arm.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		     <div class="name">
+			
+			<img src="excersises/308_1.jpg" />
+			<a href="#" >Barbell Shoulder Press</a><br>
+			<a href="#" class="shoulders"> Category: Shoulders </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/308_1.jpg" />
+						<img src="excersises/308_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Sit on a bench with back support in a squat rack. Position a barbell at a height that is just above your head. Grab the barbell with a pronated grip (palms facing forward).</li>
+								<li>Once you pick up the barbell with the correct grip width, lift the bar up over your head by locking your arms. Hold at about shoulder level and slightly in front of your head. This is your starting position.</li>
+								<li>Lower the bar down to the shoulders slowly as you inhale.</li>
+								<li>Lift the bar back up to the starting position as you exhale.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/328_1.jpg" />
+			<a href="#" >Dumbbell Shoulder Presss</a><br>
+			<a href="#" class="shoulders"> Category: Shoulders </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/328_1.jpg" />
+						<img src="excersises/328_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>While holding a dumbbell in each hand, sit on a military press bench or utility bench that has back support. Place the dumbbells upright on top of your thighs.</li>
+								<li>Now raise the dumbbells to shoulder height one at a time using your thighs to help propel them up into position.</li>
+								<li>Make sure to rotate your wrists so that the palms of your hands are facing forward. This is your starting position.</li>
+								<li>Now, exhale and push the dumbbells upward until they touch at the top.</li>
+								<li>Then, after a brief pause at the top contracted position, slowly lower the weights back down to the starting position while inhaling.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		  <div class="name">
+			
+			<img src="excersises/372_1.jpg" />
+			<a href="#" >Front Two-Dumbbell Raise</a><br>
+			<a href="#" class="shoulders"> Category: Shoulders </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/372_1.jpg" />
+						<img src="excersises/372_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Pick a couple of dumbbells and stand with a straight torso and the dumbbells on front of your thighs at arms length with the palms of the hand facing your thighs. This will be your starting position.</li>
+								<li>While maintaining the torso stationary (no swinging), lift the dumbbells to the front with a slight bend on the elbow and the palms of the hands always facing down. Continue to go up until you arms are slightly above parallel to the floor. Exhale as you execute this portion of the movement and pause for a second at the top.</li>
+								<li>As you inhale, lower the dumbbells back down slowly to the starting position.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 	  <div class="name">
+			
+			<img src="excersises/376_1.jpg" />
+			<a href="#" >Lying Rear Delt Raise</a><br>
+			<a href="#" class="shoulders"> Category: Shoulders </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/376_1.jpg" />
+						<img src="excersises/376_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>While holding a dumbbell in each hand, lay with your chest down on a flat bench.</li>
+								<li>Position the palms of the hands in a neutral manner (palms facing your torso) as you keep the arms extended with the elbows slightly bent. This will be your starting position.</li>
+								<li>Now raise the arms to the side until your elbows are at shoulder height and your arms are roughly parallel to the floor as you exhale. Tip: Maintain your arms perpendicular to the torso while keeping them extended throughout the movement. Also, keep the contraction at the top for a second.</li>
+								<li>Slowly lower the dumbbells to the starting position as you inhale.</li>
+								<li>Repeat for the recommended amount of repetitions and then switch to the other arm.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		  <div class="name">
+			
+			<img src="excersises/97_1.jpg" />
+			<a href="#" >Barbell Shrug</a><br>
+			<a href="#" class="traps"> Category: Traps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/97_1.jpg" />
+						<img src="excersises/97_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Stand up straight with your feet at shoulder width as you hold a barbell with both hands in front of you using a pronated grip (palms facing the thighs). Tip: Your hands should be a little wider than shoulder width apart. You can use wrist wraps for this exercise for a better grip. This will be your starting position.</li>
+								<li>Raise your shoulders up as far as you can go as you breathe out and hold the contraction for a second. Tip: Refrain from trying to lift the barbell by using your biceps.</li>
+								<li>Slowly return to the starting position as you breathe in.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		  <div class="name">
+			
+			<img src="excersises/96_1.jpg" />
+			<a href="#" >Dumbbell Shrug</a><br>
+			<a href="#" class="traps"> Category: Traps </a>
+				<div class="item">
+				
+					<div class="images">
+						<img src="excersises/96_1.jpg" />
+						<img src="excersises/96_2.jpg" />
+						
+					</div>
+					
+					<div class="desc">
+							<ol>
+								<li>Stand erect with a dumbbell on each hand (palms facing your torso), arms extended on the sides.</li>
+								<li>Lift the dumbbells by elevating the shoulders as high as possible while you exhale. Hold the contraction at the top for a second. Tip: The arms should remain extended at all times. Refrain from using the biceps to help lift the dumbbells. Only the shoulders should be moving up and down.</li>
+								<li>Lower the dumbbells back to the original position.</li>
+								<li>Repeat for the recommended amount of repetitions.</li>
+								
+							</ol>
+					</div>
+				</div>		
+		 </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+	</div>
+	
+	<div class="options">
+	<h3>Filter</h3>
+	<div><input type="checkbox" value="biceps" ><label>Biceps</label></div>
+	<div><input type="checkbox" value="triceps"><label>Triceps</label></div>
+	<div><input type="checkbox" value="legs"><label>Legs</label></div>
+	<div><input type="checkbox" value="abdominals"><label>Abdominals</label></div>
+	<div><input type="checkbox" value="chest"><label>Chest</label></div>
+	<div><input type="checkbox" value="back"><label>Back</label></div>
+	<div><input type="checkbox" value="shoulders"><label>Shoulders</label></div>
+	<div><input type="checkbox" value="traps"><label>Traps</label></div>
+	</div>
+	
+	<div class="info">
+	<div class="part1"></div>
+		<div class="info1">
+			<h1>Please select category from the filter</h1>
+		</div>
+	</div>
+	
+	
+	
+	
+</div>
+
+
+</body>
+</html>
